@@ -14,9 +14,6 @@
     <!-- Bootstrap CSS File -->
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- BootsTrap Datepicker-->
-    <link href="lib/bootstrap/css/bootstrap-datepicker.css" rel="stylesheet" />
-
     <!-- Libraries CSS Files -->
     <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="lib/animate/animate.min.css" rel="stylesheet">
@@ -63,29 +60,25 @@
         </div>
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal fade" id="modalEventos" tabindex="-1" role="dialog" aria-labelledby="modalTitulo" aria-hidden="true">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="btn btn-primary"></button>
-                    <h5 class="modal-title ml-5" id="exampleModalLongTitle"></h5>
+                    <button type="button" class="btn btn-warning"></button>
+                    <h5 class="modal-title" id="modalTitulo"></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                </div>
+                <div id="modalDescricao" class="modal-body"></div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary">
-                        <a href="img/about-plan.jpg" class="link-preview" data-lightbox="ferramenta" data-title="Evento" title="Preview">
-                            <i>Galeria de fotos</i>
-                        </a>
-                        </button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" onclick="carregar('eventos.html')">Fazer Inscrição</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                 </div>
             </div>
         </div>
     </div>
+
 </body>
 
 <!--JavaScript Libraries-->
