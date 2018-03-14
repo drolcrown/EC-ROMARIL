@@ -1,0 +1,24 @@
+<component name="libraryTable">
+  <library name="Hibernate" type="hibernate">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Área de Trabalho/arquivos/hibernate/antlr-2.7.6.jar!/" />
+      <root url="jar://$USER_HOME$/Área de Trabalho/arquivos/hibernate/c3p0-0.9.1.2.jar!/" />
+      <root url="jar://$USER_HOME$/Área de Trabalho/arquivos/hibernate/cglib-nodep-2.1_3.jar!/" />
+      <root url="jar://$USER_HOME$/Área de Trabalho/arquivos/hibernate/commons-collections-2.1.1.jar!/" />
+      <root url="jar://$USER_HOME$/Área de Trabalho/arquivos/hibernate/commons-logging-1.0.4.jar!/" />
+      <root url="jar://$USER_HOME$/Área de Trabalho/arquivos/hibernate/dom4j-1.6.1.jar!/" />
+      <root url="jar://$USER_HOME$/Área de Trabalho/arquivos/hibernate/ejb3-persistence.jar!/" />
+      <root url="jar://$USER_HOME$/Área de Trabalho/arquivos/hibernate/hibernate-annotations.jar!/" />
+      <root url="jar://$USER_HOME$/Área de Trabalho/arquivos/hibernate/hibernate-commons-annotations.jar!/" />
+      <root url="jar://$USER_HOME$/Área de Trabalho/arquivos/hibernate/hibernate-entitymanager.jar!/" />
+      <root url="jar://$USER_HOME$/Área de Trabalho/arquivos/hibernate/hibernate-validator.jar!/" />
+      <root url="jar://$USER_HOME$/Área de Trabalho/arquivos/hibernate/hibernate3.jar!/" />
+      <root url="jar://$USER_HOME$/Área de Trabalho/arquivos/hibernate/javassist.jar!/" />
+      <root url="jar://$USER_HOME$/Área de Trabalho/arquivos/hibernate/jboss-archive-browsing.jar!/" />
+      <root url="jar://$USER_HOME$/Área de Trabalho/arquivos/hibernate/jta.jar!/" />
+      <root url="jar://$USER_HOME$/Área de Trabalho/arquivos/hibernate/log4j-1.2.11.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

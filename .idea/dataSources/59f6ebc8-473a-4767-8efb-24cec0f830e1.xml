@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="cedes160@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.4">
+    <root id="1"/>
+    <database id="2" parent="1" name="cedes160">
+      <ObjectId>311317</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>12415</ObjectId>
+    </database>
+    <database id="4" parent="1" name="bd_sisbol">
+      <ObjectId>16436</ObjectId>
+    </database>
+    <database id="5" parent="1" name="bd_sisbol_teste">
+      <ObjectId>16437</ObjectId>
+    </database>
+    <database id="6" parent="1" name="BancoDeDados">
+      <ObjectId>32742</ObjectId>
+    </database>
+    <database id="7" parent="1" name="gerenciadorderenda">
+      <ObjectId>52248</ObjectId>
+    </database>
+    <database id="8" parent="1" name="plataforma-loja_development">
+      <ObjectId>266029</ObjectId>
+    </database>
+    <database id="9" parent="1" name="plataforma-loja_test">
+      <ObjectId>266030</ObjectId>
+    </database>
+    <schema id="10" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2018-03-01.01:29:28.606</IntrospectionTimestamp>
+      <IntrospectionStateNumber>91414</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="11" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="12" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="13" parent="2" name="pg_temp_1">
+      <ObjectId>11816</ObjectId>
+    </schema>
+    <schema id="14" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11817</ObjectId>
+    </schema>
+    <schema id="15" parent="2" name="information_schema">
+      <ObjectId>12123</ObjectId>
+    </schema>
+    <sequence id="16" parent="10" name="tb_evento_id_seq">
+      <ObjectId>311318</ObjectId>
+      <StateNumber>91414</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <table id="17" parent="10" name="tb_evento">
+      <ObjectId>311320</ObjectId>
+      <StateNumber>91414</StateNumber>
+    </table>
+    <column id="18" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>91414</StateNumber>
+      <SequenceName>tb_evento_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;tb_evento_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="19" parent="17" name="datafim">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>91414</StateNumber>
+    </column>
+    <column id="20" parent="17" name="datainicio">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>91414</StateNumber>
+    </column>
+    <column id="21" parent="17" name="estado">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>91414</StateNumber>
+    </column>
+    <column id="22" parent="17" name="municipio">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>91414</StateNumber>
+    </column>
+    <column id="23" parent="17" name="nome">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>91414</StateNumber>
+    </column>
+    <index id="24" parent="17" name="tb_evento_pkey">
+      <ObjectId>311327</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="25" parent="17" name="tb_evento_pkey">
+      <ObjectId>311328</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>tb_evento_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
