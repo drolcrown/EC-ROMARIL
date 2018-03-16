@@ -1,0 +1,33 @@
+[0206/111159.248:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acesso Negado} Um processo solicitou acesso a um objeto, mas o direito de acesso não lhe foi concedido.  (0xc0000022)
+[0206/111159.249:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acesso Negado} Um processo solicitou acesso a um objeto, mas o direito de acesso não lhe foi concedido.  (0xc0000022)
+[0206/111159.251:ERROR:process_info.cc(632)] range at 0xb3682fe400000000, size 0x2af fully unreadable
+[0206/111159.251:ERROR:process_info.cc(632)] range at 0xb368300400000000, size 0x2af fully unreadable
+[0206/111159.251:ERROR:process_info.cc(632)] range at 0x0, size 0x2af fully unreadable
+[0207/102017.497:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acesso Negado} Um processo solicitou acesso a um objeto, mas o direito de acesso não lhe foi concedido.  (0xc0000022)
+[0207/102017.499:ERROR:process_info.cc(632)] range at 0xca8230b400000000, size 0x1e5 fully unreadable
+[0207/102017.499:ERROR:process_info.cc(632)] range at 0xca8230d400000000, size 0x1e5 fully unreadable
+[0207/102017.499:ERROR:process_info.cc(632)] range at 0x0, size 0x1e5 fully unreadable
+[0209/051217.437:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acesso Negado} Um processo solicitou acesso a um objeto, mas o direito de acesso não lhe foi concedido.  (0xc0000022)
+[0209/051217.437:ERROR:process_info.cc(632)] range at 0xd28730b400000000, size 0x2f0 fully unreadable
+[0209/051217.437:ERROR:process_info.cc(632)] range at 0xd28730d400000000, size 0x2f0 fully unreadable
+[0209/051217.437:ERROR:process_info.cc(632)] range at 0x0, size 0x2f0 fully unreadable
+[0209/161932.134:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acesso Negado} Um processo solicitou acesso a um objeto, mas o direito de acesso não lhe foi concedido.  (0xc0000022)
+[0209/161932.137:ERROR:process_info.cc(632)] range at 0xc0b330b400000000, size 0x2c5 fully unreadable
+[0209/161932.137:ERROR:process_info.cc(632)] range at 0xc0b330d400000000, size 0x2c5 fully unreadable
+[0209/161932.137:ERROR:process_info.cc(632)] range at 0x0, size 0x2c5 fully unreadable
+[0214/124148.450:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acesso Negado} Um processo solicitou acesso a um objeto, mas o direito de acesso não lhe foi concedido.  (0xc0000022)
+[0214/124148.509:ERROR:process_info.cc(632)] range at 0xb4e92fe400000000, size 0x1fb fully unreadable
+[0214/124148.509:ERROR:process_info.cc(632)] range at 0xb4e9300400000000, size 0x1fb fully unreadable
+[0214/124148.509:ERROR:process_info.cc(632)] range at 0x0, size 0x1fb fully unreadable
+[0215/104608.330:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acesso Negado} Um processo solicitou acesso a um objeto, mas o direito de acesso não lhe foi concedido.  (0xc0000022)
+[0215/104608.332:ERROR:process_info.cc(632)] range at 0x3a2430a200000000, size 0x207 fully unreadable
+[0215/104608.332:ERROR:process_info.cc(632)] range at 0x3a2430c200000000, size 0x207 fully unreadable
+[0215/104608.332:ERROR:process_info.cc(632)] range at 0x0, size 0x207 fully unreadable
+[0216/112528.975:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acesso Negado} Um processo solicitou acesso a um objeto, mas o direito de acesso não lhe foi concedido.  (0xc0000022)
+[0216/112528.978:ERROR:process_info.cc(632)] range at 0xc81a2fe200000000, size 0x20e fully unreadable
+[0216/112528.978:ERROR:process_info.cc(632)] range at 0xc81a300200000000, size 0x20e fully unreadable
+[0216/112528.978:ERROR:process_info.cc(632)] range at 0x0, size 0x20e fully unreadable
+[0220/112736.343:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acesso Negado} Um processo solicitou acesso a um objeto, mas o direito de acesso não lhe foi concedido.  (0xc0000022)
+[0220/112736.379:ERROR:process_info.cc(632)] range at 0x326c2f3400000000, size 0x1b9 fully unreadable
+[0220/112736.379:ERROR:process_info.cc(632)] range at 0x326c2f5400000000, size 0x1b9 fully unreadable
+[0220/112736.379:ERROR:process_info.cc(632)] range at 0x0, size 0x1b9 fully unreadable

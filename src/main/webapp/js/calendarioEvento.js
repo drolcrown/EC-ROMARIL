@@ -46,7 +46,6 @@ function mostraCalendario() {
 
 function mostrarEventos() {
     var evento = document.getElementById('carousel')
-    var eventoPass = document.getElementById('eventosPassados')
     var prev = document.getElementById('prev')
     var next = document.getElementById('next')
     var numEvento = document.getElementById('numEventos')
@@ -132,7 +131,7 @@ function adicionarEventos() {
         "<div class='textoCalendario'></div></div>" +
         "<div class='col-9 textoCalendario'><img src='img/iconEvento/clock.svg' class='iconeEvento img-fluid'>" +
         "<small></small><br><img src='img/iconEvento/map-location.svg' class='iconeEvento img-fluid'>" +
-        "<small></small>" + "</div></div></div></div></button>";
+        "<small></small></div></div></div></div></button>";
 
     var eventoString =
         "<button type='button' class='btn btn-secondary' style='border: hidden; background: transparent;'"+
@@ -321,28 +320,7 @@ function pesquisarEvento() {
     }
 }
 
-function validarData() {
-    var dataI = document.getElementById('dataInicio')
-    var dataF = document.getElementById('dataFim')
-    if (!dataInicio.checkValidity()) {
-        document.getElementById('dataInicio').innerHTML = dataInicio.validationMessage
-        return false
-    } else {
-        document.getElementById('dataInicio').innerHTML = 'Input OK'
-        return true
-    }
-
-    if (!dataFim.checkValidity()) {
-        document.getElementById('dataFim').innerHTML = dataFim.validationMessage
-        return false
-    } else {
-        document.getElementById('dataFim').innerHTML = 'Input OK'
-        return true
-    }
-}
-
 function procurarElementoID(evento) {
-   // var corpo = open('eventos.html', 'blank');
     var parenteID = evento.parentElement.id.substring(0, 6);
     var parente = evento.parentElement;
 
@@ -357,3 +335,40 @@ function procurarElementoID(evento) {
     return parente
 }
 
+function adicionarEventoBD(evento){
+    $.ajax({
+        method: "POST",
+        contentType: "json",
+        dataType: "json",
+        url:"rest/eventos/salvar",
+        data: evento
+    }).done(function (data) {
+        console.log(data)
+    });
+}
+
+
+function percorreForms(form) {
+    var nomeVar, valorVar;
+    var json = '', tamanho = form.length;
+
+    for(i=0; i<tamanho; i++) {
+        if(form[i].nodeName !== 'BUTTON') {
+            if (i === 0) {
+                json += '{ '
+            }
+            nomeVar = form[i].name;
+            valorVar = form[i].value;
+            json += '"' + nomeVar.toString() + '": "' + valorVar.toString() + '"';
+            if (form[i+1].nodeName !== 'BUTTON') {
+                json += ",\n";
+            }
+        } else {
+            i = tamanho;
+        }
+    }
+    json+= '\n}';
+    console.log(json)
+    // console.log(JSON.parse(json))
+    // adicionarEventoBD(json);
+}

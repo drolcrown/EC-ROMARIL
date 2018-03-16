@@ -17,19 +17,21 @@ public class Evento implements EntidadeGenerica{
 	@Column
 	private String descricao;
     @Column
-	private String estado;
+	private String local;
     @Column
-	private String municipio;
+	private String hora;
+	@Column
+	private String imagem;
 	
 	public Evento() {
 	}
 
-	public Evento(String nome, String dataI, String dataF, String estado, String municipio, String descricao) {
+	public Evento(String nome, String dataI, String dataF, String local, String hora, String descricao) {
 		this.nome = nome;
 		this.dataInicio = dataI;
 		this.dataFim = dataF;
-		this.estado = estado;
-		this.municipio = municipio;
+		this.local = local;
+		this.hora = hora;
 		this.descricao = descricao;
 	}
 	
@@ -51,17 +53,17 @@ public class Evento implements EntidadeGenerica{
 	public void setDataFim(String dataFim) {
 		this.dataFim = dataFim;
 	}
-	public String getEstado() {
-		return estado;
+	public String getLocal() {
+		return local;
 	}
-	public void setEstado(String estado) {
-		this.estado = estado;
+	public void setEstado(String local) {
+		this.local = local;
 	}
-	public String getMunicipio() {
-		return municipio;
+	public String getHora() {
+		return hora;
 	}
-	public void setMunicipio(String municipio) {
-		this.municipio = municipio;
+	public void setHora(String hora) {
+		this.hora = hora;
 	}
 
 	public String getDescricao() {

@@ -1813,7 +1813,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #imgPerfil {
     margin-top: 5%;
-    width: 200px;
+    width: 170px;
 }
 
 textarea {
@@ -1828,6 +1828,10 @@ textarea {
     height: 40px;
 }
 
+
+#corpoEv{
+    overflow: hidden;
+}
 #numEventos {
     margin-left: 1%;
     margin-top: 2%;

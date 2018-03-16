@@ -28,31 +28,18 @@
 </head>
 
 <body>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Launch demo modal
-</button>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
+<form id="myForm" >
+    <div class="form-group">
+        <label for="email1">Email address</label>
+        <input name="email" type="email" class="form-control" id="email1" aria-describedby="emailHelp" placeholder="Enter email" value="">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
+    <div class="form-group">
+        <label for="password1">Password</label>
+        <input name="password" type="password" class="form-control" id="password1" placeholder="Password" value="">
+    </div>
+    <button type="button" onclick="percorreForms(this.form)" class="btn btn-primary">Submit</button>
+</form>
 </body>
 
 <!--JavaScript Libraries-->
@@ -80,5 +67,6 @@
 <!-- Template Main Javascript File -->
 <script src="js/main.js "></script>
 <script src="js/calendarioEvento.js "></script>
+
 
 </html>

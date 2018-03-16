@@ -39,38 +39,36 @@
                 <div id="errormessage"></div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <input type="text" class="form-control" name="matricula" id="matricula" maxlength="7" placeholder="Digite sua matrícula" data-rule="matricula"  data-msg="Matrícula inválida!">
+                    <input type="text" class="form-control" name="matricula" id="matricula" maxlength="7" placeholder="Digite sua matricula" data-rule="matricula"  data-msg="Matricula Inválida!">
                     <div class="validation"></div>
                 </div>
                 <div class="form-group col-md-6">
-                    <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite seu nome" data-rule="nome" data-msg="" >
+                    <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite seu Nome" data-rule="nome" data-msg="" >
                     <div class="validation"></div>
                 </div>
                 <div class="form-group col-md-6">
-                    <input type="text" class="form-control" name="ramal" id="ramal" placeholder="Digite seu ramal" data-rule="ramal" data-msg="Digite ramal válido">
+                    <input type="text" class="form-control" name="email" id="email" placeholder="Digite seu E-mail" data-rule="email" data-msg="Por favor entre com um email valido!">
                     <div class="validation"></div>
                 </div>
-
                 <div class="form-group col-md-6">
-                    <input type="text" class="form-control" name="telefone" id="telefone" maxlength="15" placeholder= "Digite seu celular" data-rule="telefone" data-msg="Digite apenas números">
-                    <div class="validation"></div>
-                </div>
-                <!-- <div class="form-group col-md-6">
                     <input type="text" name="unidade" id="unidade" class="form-control" placeholder="Digite sua Unidade" data-rule="unidade" data-msg="Digite no campo apenas letras">
                     <div class="validation"></div>
-                </div> -->
+                </div>
             </div>
         <fieldset class="form-group">
-                <legend class="col-form-label">Aceito participar de grupos de trabalho no whatsApp?</legend>
+                <legend class="col-form-label">Aceita Participar de Eventuais Grupos de WhatsApp</legend>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox">
+                    <input class="form-check-input" id="hide" type="checkbox" onclick="showDiv()">
                     <label class="form-check-label"></label><br>
                     <div class="validation"></div>
                 </div>
         </fieldset>
-        <br>
         <div class="form-group">
-                <textarea class="form-control" name="message"  rows="5" data-rule="minlen:7" data-msg="Nos conte seus talentos" placeholder="Digite seus talentos"></textarea>
+                <input type="text" class="form-control" name="telefone" id="telefone" maxlength="15" placeholder= "Digite o seu Telefone" data-rule="telefone" data-msg="Digite no campo apenas números">
+                <div class="validation" id="validOculto"></div>
+        </div><br>
+        <div class="form-group">
+                <textarea class="form-control" name="message"  rows="5" data-rule="minlen:7" data-msg="Escreva algo para nós :)" placeholder="Menssagem"></textarea>
                 <div class="validation"></div>
         </div>
                 <div class="text-center"><button type="submit">Enviar Formulario</button></div>
