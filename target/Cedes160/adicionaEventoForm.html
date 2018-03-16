@@ -31,7 +31,7 @@
         <div class="topo">
             <h2 class="row justify-content-center"> Adicionar Evento </h2>
         </div>
-        <form id="evento" class="eventosForm mt-3 ml-1" action="" method="post">
+        <form id="evento" class="eventosForm mt-3 ml-1">
             <div class="form-row">
                 <div class="col-md-7">
                     <div class="form-row">
@@ -48,11 +48,11 @@
                             <img src="img/eventos/calendar.svg" height="32">
                         </div>
                         <div class="col-md-5 mb-3">
-                            <input type="text" class="form-control" maxlength="10" id="dataInicio"  required>
+                            <input type="text" class="form-control" maxlength="10" id="dataInicio" onmousedown="mostraCalendario()" required>
                         </div>
 
                         <div class="col-md-5 mb-3">
-                            <input type="text" class="form-control" maxlength="10" id="dataFim" required>
+                            <input type="text" class="form-control" maxlength="10" id="dataFim" onmousedown="mostraCalendario()" required>
                         </div>
                     </div>
 
@@ -76,7 +76,7 @@
 
                     <div class="form-row row ml-5">
                         <div class="col-md-0">
-                            <button class="btn btn-primary" type="button" value="Button" onclick="adicionarEventoBD()">Adicionar Evento</button>
+                            <button class="btn btn-primary" type="button" value="Button" onclick="criarEvento()">Adicionar Evento</button>
                         </div>
                         <div class="col-md-0">
                             <button class="btn btn-primary" type="reset" value="Reset">Limpar</button>

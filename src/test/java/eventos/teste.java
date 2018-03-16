@@ -7,10 +7,8 @@ import java.util.Date;
 
 public class teste {
     public static void main(String[] args){
-        Date data = new Date();
-        Date dataF = new Date(118,1,3);
 
-        Evento evento = new Evento("Rafa2", data.toString(), dataF.toString(), "da", "go", "");
+        Evento evento = new Evento("Rafa3", "12/03/2016", "22/03/2016", "Brasilia", "9h", "");
 
         EventoDAO eventoDAO = new EventoDAO();
         eventoDAO.salvar(evento);

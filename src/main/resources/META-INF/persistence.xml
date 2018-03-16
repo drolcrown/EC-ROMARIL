@@ -13,7 +13,7 @@
 			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/cedes160"/>
 			<property name="hibernate.connection.user" value="postgres" />
 			<property name="hibernate.connection.password" value="postgres" />
-             <!--<property name="hibernate.hbm2ddl.auto" value="create" />-->
+             <property name="hibernate.hbm2ddl.auto" value="create" />
             <!--<property name="hibernate.hbm2ddl.auto" value="update"/>-->
 
             <!--Configuracoes de Debug-->

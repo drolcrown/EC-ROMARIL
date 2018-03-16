@@ -37,7 +37,7 @@ jQuery(document).ready(function($) {
                 break;
 
             case 'matricula':
-            if(i.val()[0]  !== 'c' && i.val()[0] !== 'e' && i.val()[0] !== 'f' && i.val()[0] !== 'p' && i.val()[0] !== 's'){
+            if(i.val()[0]  !== 'c' && i.val()[0] !== 'e' && i.val()[0] !== 'f'){
                   ferror = ierror = true;
             }else{
                 var matr = i.val().substring(1, i.val().length);
@@ -150,20 +150,20 @@ jQuery(document).ready(function($) {
     });
   });
   
-// // ocultar div telefone 
-// function showDiv() {
-//   var ocultar = document.getElementById("telefone");
-//     if(ocultar.style.display === "block"){
-//       ocultar.style.display = "none";
-//       if(validtel){
-//         document.getElementById('validOculto').textContent = '';
-//       }
-//       validtel = false;
-//      }else{
-//       ocultar.style.display = "block";
-//       validtel = true;
-//      }
-//  }
+// ocultar div telefone 
+function showDiv() {
+  var ocultar = document.getElementById("telefone");
+    if(ocultar.style.display === "block"){
+      ocultar.style.display = "none";
+      if(validtel){
+        document.getElementById('validOculto').textContent = '';
+      }
+      validtel = false;
+     }else{
+      ocultar.style.display = "block";
+      validtel = true;
+     }
+ }
 
 //mascara
  function mascara(o,f){

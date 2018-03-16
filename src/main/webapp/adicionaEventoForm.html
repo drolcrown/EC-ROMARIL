@@ -27,69 +27,74 @@
     <!-- Main Stylesheet File -->
     <link href="css/style.css" rel="stylesheet">
 
-    <body onload="acionaEventos()">
+    <body id="" onload="acionaEventos()">
+        <div class="topoEventos text-center">
+            <h1>CEDESBR</h1>
+        </div>
         <div class="topo">
             <h2 class="row justify-content-center"> Adicionar Evento </h2>
         </div>
         <form id="evento" class="eventosForm mt-3 ml-1">
             <div class="form-row">
-                <div class="col-md-7">
-                    <div class="form-row">
-                        <div class="col-md-0">
-                            <img src="img/eventos/calendar.svg" height="32">
+                    <div class="col-md-7">
+                        <div class="form-row">
+                            <div class="col-md-0">
+                                <img src="img/eventos/calendar.svg" height="32">
+                            </div>
+                            <div class="col-md-10 mb-3">
+                                <input name="nome" type="text" class="form-control" id="nomeEvento" placeholder="Digite o nome do evento" required>
+                            </div>
                         </div>
-                        <div class="col-md-10 mb-3">
-                            <input type="text" class="form-control" id="nomeEvento" placeholder="Digite o nome do evento" required>
+
+                        <div class="form-row">
+                            <div class="col-md-0">
+                                <img src="img/eventos/calendar.svg" height="32">
+                            </div>
+                            <div class="col-md-5 mb-3">
+                                <input name="dataInicio" type="text" class="form-control" maxlength="10" id="dataInicio" onmousedown="mostraCalendario()" required>
+                            </div>
+
+                            <div class="col-md-5 mb-3">
+                                <input name="dataFim" type="text" class="form-control" maxlength="10" id="dataFim" onmousedown="mostraCalendario()" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-md-0">
+                                <img src="img/eventos/calendar.svg" height="32">
+                            </div>
+                            <div class="form-row mb-3">
+                                <input name="local" type="text" class="form-control col-7 ml-2" placeholder="Digite Local" required>
+
+                                <input name="hora" type="text" class="form-control col-3 ml-2" id="tituloEvento" placeholder="Digite Hora" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-md-0">
+                                <img src="img/eventos/calendar.svg" height="32">
+                            </div>
+                            <div class="col-md-10 mb-3">
+                                <textarea name="descricao" type="text" class="form-control" id="descricaoEvento" placeholder="Digite a descrição do evento" required></textarea>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="form-row">
-                        <div class="col-md-0">
-                            <img src="img/eventos/calendar.svg" height="32">
-                        </div>
-                        <div class="col-md-5 mb-3">
-                            <input type="text" class="form-control" maxlength="10" id="dataInicio" onmousedown="mostraCalendario()" required>
-                        </div>
-
-                        <div class="col-md-5 mb-3">
-                            <input type="text" class="form-control" maxlength="10" id="dataFim" onmousedown="mostraCalendario()" required>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="col-md-0">
-                            <img src="img/eventos/calendar.svg" height="32">
-                        </div>
-                        <div class="col-md-10 mb-3">
-                            <input type="text" class="form-control" id="tituloEvento" placeholder="Digite o titulo do evento" required>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="col-md-0">
-                            <img src="img/eventos/calendar.svg" height="32">
-                        </div>
-                        <div class="col-md-10 mb-3">
-                            <textarea type="text" class="form-control" id="descricaoEvento" placeholder="Digite a descrição do evento" required></textarea>
-                        </div>
-                    </div>
-
-                    <div class="form-row row ml-5">
-                        <div class="col-md-0">
-                            <button class="btn btn-primary" type="button" value="Button" onclick="criarEvento()">Adicionar Evento</button>
-                        </div>
-                        <div class="col-md-0">
-                            <button class="btn btn-primary" type="reset" value="Reset">Limpar</button>
-                        </div>
+                    <div >
+                        <img id="imgPerfil" class="row ml-5 mt-2 mb-2 " src="img/SVG/image.svg">
+                        <label>
+                            <input name="imagem" id="inputPerfil" class="btn btn-primary" type="file" onclick="alterarImagem()">
+                        </label>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <img id="imgPerfil" class="row ml-5 mt-2 mb-2 " src="img/SVG/image.svg">
-                    <label for="imagem">
-                         <input id="inputPerfil" class="btn btn-primary" name="imagem" type="file" onclick="alterarImagem()">
-                    </label>
+
+                <div class="form-row row mt-4 ml-5">
+                    <div class="col-md-0">
+                        <button class="btn btn-primary" type="button" value="Button" onclick="percorreForms(this.form)">Adicionar Evento</button>
+                    </div>
+                    <div class="col-md-0">
+                        <button class="btn btn-primary" type="reset" value="Reset">Limpar</button>
+                    </div>
                 </div>
-            </div>
         </form>
     </body>
 
