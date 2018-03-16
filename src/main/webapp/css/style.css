@@ -704,8 +704,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 #about,
 #coordenacao,
 #talentos,
-#calendarioEventos {
-    background: url("../img/about-bg.jpg") center top no-repeat fixed;
+#calendarioEventos,
+#ideia {
     background-size: cover;
     padding: 60px 0 40px 0;
     position: relative;
@@ -714,7 +714,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 #about::before,
 #coordenacao::before,
 #talentos::before,
-#calendarioEventos::before {
+#calendarioEventos::before,
+#ideia::before {
     content: '';
     position: absolute;
     left: 0;
@@ -728,7 +729,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 #about .container,
 #coordenacao .container,
 #talentos .container,
-#calendarioEventos .container {
+#calendarioEventos .container,
+#ideia .container {
     position: relative;
     z-index: 10;
 }
@@ -736,7 +738,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 #about .about-col,
 #coordenacao .about-col,
 #talentos .about-col,
-#calendarioEventos .about-col {
+#calendarioEventos .about-col,
+#ideia .about-col {
     background: #fff;
     border-radius: 0 0 4px 4px;
     box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
@@ -746,21 +749,24 @@ body.mobile-nav-active #mobile-nav-toggle {
 #about .about-col .img,
 #coordenacao .about-col .img,
 #talentos .about-col .img,
-#calendarioEventos .about-col .img {
+#calendarioEventos .about-col .img,
+#ideia .about-col .img {
     position: relative;
 }
 
 #about .about-col .img img,
 #coordenacao .about-col .img img,
 #talentos .about-col .img img,
-#calendarioEventos .about-col .img img {
+#calendarioEventos .about-col .img img,
+#ideia .about-col .img img {
     border-radius: 4px 4px 0 0;
 }
 
 #about .about-col .icon,
 #coordenacao .about-col .icon,
 #talentos .about-col .icon,
-#calendarioEventos .about-col .icon {
+#calendarioEventos .about-col .icon,
+#ideia .about-col .icon {
     width: 64px;
     height: 64px;
     padding-top: 8px;
@@ -779,7 +785,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 #about .about-col i,
 #coordenacao .about-col i,
 #talentos .about-col i,
-#calendarioEventos .about-col i {
+#calendarioEventos .about-col i,
+#ideia .about-col i {
     font-size: 36px;
     line-height: 1;
     color: #fff;
@@ -789,7 +796,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 #about .about-col:hover .icon,
 #coordenacao .about-col:hover .icon,
 #talentos .about-col:hover .icon,
-#calendarioEventos .about-col:hover .icon {
+#calendarioEventos .about-col:hover .icon,
+#ideia .about-col:hover .icon {
     /* background-color: #fff; */
     background-color: #2466AF;
 }
@@ -797,7 +805,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 #about .about-col:hover i,
 #coordenacao .about-col:hover i,
 #talentos .about-col:hover i,
-#calendarioEventos .about-col:hover i {
+#calendarioEventos .about-col:hover i,
+#ideia .about-col:hover i {
     /* color: #18d26e; */
     color: #fff;
 }
@@ -805,7 +814,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 #about .about-col h2,
 #coordenacao .about-col h2,
 #talentos .about-col h2,
-#calendarioEventos .about-col h2 {
+#calendarioEventos .about-col h2,
+#ideia .about-col h2 {
     color: #000;
     text-align: center;
     font-weight: 700;
@@ -817,19 +827,21 @@ body.mobile-nav-active #mobile-nav-toggle {
 #about .about-col h2 a,
 #coordenacao .about-col h2 a,
 #talentos .about-col h2 a,
-#calendarioEventos .about-col h2 a {
+#calendarioEventos .about-col h2 a,
+#ideia .about-col h2 a {
     color: #000;
 }
 
 
 /* #about .about-col h2 a:hover,#coordenacao .about-col h2 a:hover,#talentos .about-col h2 a:hover {
-   color: #18d26e; 
+   color: #18d26e;
 } */
 
 #about .about-col p,
 #coordenacao .about-col p,
 #talentos .about-col p,
-#calendarioEventos .about-col p {
+#calendarioEventos .about-col p,
+#ideia .about-col p {
     font-size: 14px;
     line-height: 24px;
     color: #333;
@@ -1625,7 +1637,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #contact .form input,
 #contact .form textarea {
     padding: 10px 14px;
-    border-radius: 15;
+    border-radius: 5px;
     box-shadow: none;
     font-size: 15px;
 }
@@ -1651,14 +1663,14 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #footer {
     background: #2466af;
-    padding: 0 0 30px 0;
+    padding: 0 0 20px 0;
     color: #eee;
     font-size: 14px;
 }
 
 #footer .footer-top {
     background: #2466af;
-    padding: 60px 0 30px 0;
+    padding: 25px 0 15px 0;
 }
 
 #footer .footer-top .footer-info {
@@ -1782,7 +1794,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   width: 65%;
 }
 
-#footer .footer-top .footer-newsletter input[type="submit"] { 
+#footer .footer-top .footer-newsletter input[type="submit"] {
   background: #DE6900;
   border: 0;
   width: 35%;
@@ -1832,12 +1844,25 @@ textarea {
 #corpoEv{
     overflow: hidden;
 }
+
 #numEventos {
     margin-left: 1%;
     margin-top: 2%;
     margin-bottom: 1%;
     font-size: 16px;
     color: black;
+}
+
+#semEvento {
+    margin-left: 30%;
+    margin-top: 25%;
+    color: white;
+}
+
+#eventosPassFut {
+    height: 570px;
+    background: #2466AF;
+    /* background: linear-gradient(rgba(0, 142, 99, 0.1), rgba(180, 24, 24, 0.1)), url(../img/fundo_calendario.jpg) fixed center center; */
 }
 
 #semEvento {
@@ -1873,7 +1898,6 @@ textarea {
     width: 20px;
     height: 20px;
 }
-
 
 
 .cartao {
