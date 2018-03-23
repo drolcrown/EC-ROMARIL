@@ -1,0 +1,71 @@
+-<datasources>
+
+
+-<datasource enabled="true" use-java-context="true" pool-name="ExampleDS" jndi-name="java:jboss/datasources/ExampleDS">
+
+<connection-url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE</connection-url>
+
+<driver>h2</driver>
+
+
+-<security>
+
+<user-name>sa</user-name>
+
+<password>sa</password>
+
+</security>
+
+</datasource>
+
+
+-<datasource enabled="true" pool-name="Cedes160" jndi-name="java:jboss/datasources/cedes160" use-ccm="false" jta="true">
+
+<connection-url>jdbc:postgresql://10.208.12.43:5432/postgres</connection-url>
+
+<driver-class>org.postgresql.Driver</driver-class>
+
+<driver>postgres</driver>
+
+
+-<security>
+
+<user-name>postgres</user-name>
+
+<password>postgres</password>
+
+</security>
+
+
+-<validation>
+
+<valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLValidConnectionChecker"/>
+
+<background-validation>true</background-validation>
+
+<exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLExceptionSorter"/>
+
+</validation>
+
+</datasource>
+
+
+-<drivers>
+
+
+-<driver module="com.h2database.h2" name="h2">
+
+<xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
+
+</driver>
+
+
+-<driver module="org.postgres" name="postgres">
+
+<driver-class>org.postgresql.Driver</driver-class>
+
+</driver>
+
+</drivers>
+
+</datasources>
