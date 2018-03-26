@@ -16,6 +16,7 @@ import com.google.gson.Gson;
  */
 @Path("/eventos")
 public class EventoRecurso {
+    private static String NOME = "nome", LOCAL = "local", DATA = "data";
     private EventoServico servicoEvento = new EventoServico();
 
     @GET
@@ -33,10 +34,31 @@ public class EventoRecurso {
     }
 
     @GET
-    @Path("/buscar/{nome}")
+    @Path("/buscar/{json}")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Evento> buscarEvento(@PathParam("nome") String nome){
-        return servicoEvento.buscarEvento(nome);
+    public List<Evento> buscarEvento(@PathParam("json") String json){
+        return servicoEvento.buscarEvento(json);
+    }
+
+    @GET
+    @Path("/buscarPorLocal/{nome}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Evento> buscarEventoPorNome(@PathParam("nome") String nome){
+        return servicoEvento.buscarEvento(nome, NOME);
+    }
+
+    @GET
+    @Path("/buscarPorData/{data}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Evento> buscarEventoPorData(@PathParam("data") String data){
+        return servicoEvento.buscarEvento(data, DATA);
+    }
+
+    @GET
+    @Path("/buscarPorLocal/{local}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Evento> buscarEventoPorLocal(@PathParam("local") String local){
+        return servicoEvento.buscarEvento(local, LOCAL);
     }
 
     @POST

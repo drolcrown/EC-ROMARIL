@@ -1,10 +1,54 @@
-var placeAtiv = false
-var eventos = []
-var cont = 0
-var data = new Date()
+var placeAtiv = false;
+var eventos = [];
+var cont = 0;
+var data = new Date();
 var meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho',
     'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
-]
+];
+
+var divsCarousel =
+    "<button type='button' class='btn btn-outline-light' style='border: hidden; background: transparent'"+
+    "data-toggle='modal' data-target='#modalEventos' onclick='detalheModal(procurarElementoID(event.srcElement))'>" +
+    "<div id='cartao' class='cartao'>" +
+    "<img src='img/about-plan.jpg' class='imagemEventoCartao img-fluid mb-2'>" +
+    "<h5 class='nomeEventoCartao col-12 text-center'></h5>" +
+    "<div class='infEvento container row text-center'><div class='miniCalendario'><div class='mesCalendario'></div>" +
+    "<div class='textoCalendario'></div></div>" +
+    "<div class='col-9 textoCalendario'><img src='img/iconEvento/clock.svg' class='iconeEvento img-fluid'>" +
+    "<small></small><br><img src='img/iconEvento/map-location.svg' class='iconeEvento img-fluid'>" +
+    "<small></small></div></div></div></div></button>";
+
+var eventoString =
+    "<button type='button' class='btn btn-secondary' style='border: hidden; background: transparent;'"+
+    "data-toggle='modal' data-target='#modalEventos' onclick='detalheModal(procurarElementoID(event.srcElement))'>" +
+    "<div id='cartaoPassado' class='cartaoPassado'>" +
+    "<img src='img/about-plan.jpg' class='imagemEventoCartao img-fluid'>" +
+    "<h5 class='nomeEventoCartao col-12 text-center'></h5>" +
+    "<div class='infEvento container row text-center'><div class='miniCalendario'><div class='mesCalendario'></div>" +
+    "<div class='textoCalendario'></div></div>" +
+    "<div class='col-9 textoCalendario'><img src='img/iconEvento/clock.svg' class='iconeEvento img-fluid'>" +
+    "<small></small><br><img src='img/iconEvento/map-location.svg' class='iconeEvento img-fluid'>" +
+    "<small></small></div></div></div></div></button><hr>";
+
+function mostrarDivCheckbox(nomeDiv) {
+    var listaInputs = nomeDiv.parentNode.getElementsByTagName("input");
+    var button = document.getElementById("buttonPesquisa");
+    var divOcutada = document.getElementById(nomeDiv.name);
+    divOcutada.hidden = !nomeDiv.checked;
+
+    if(nomeDiv.name === "dataCheckbox" && nomeDiv.checked){
+        adicionarPlaceholders();
+        mostraCalendario();
+    }
+
+    button.hidden = true;
+    for (i = 0; i < listaInputs.length; i++) {
+        if (listaInputs[i].checked) {
+            button.hidden = false;
+            break;
+        }
+    }
+}
 
 function acionaEventos() {
     if (!placeAtiv) {
@@ -23,36 +67,34 @@ function adicionarPlaceholders() {
     if (data.getMonth() < 10) {
         mes = '0' + mes
     }
-    document.getElementById('dataInicio').placeholder =
+    $('#dataInicio')[0].placeholder =
         dia + '/' + mes + '/' + data.getFullYear()
-    document.getElementById('dataFim').placeholder = '31/12/' + data.getFullYear()
+    $("#dataFim")[0].placeholder = '31/12/' + data.getFullYear()
     placeAtiv = true
 }
 
 function mostraCalendario() {
-    $(document).ready(function() {
-        $('#dataInicio').datepicker({
-            format: 'dd/mm/yyyy',
-            language: 'pt-BR',
-            startDate: '-1000d'
-        })
-        $('#dataFim').datepicker({
-            format: 'dd/mm/yyyy',
-            language: 'pt-BR',
-            startDate: '-1000d'
-        })
-    })
+    $('#dataInicio').datepicker({
+        format: 'dd/mm/yyyy',
+        language: 'pt-BR',
+        startDate: '-1000d'
+    });
+    $('#dataFim').datepicker({
+        format: 'dd/mm/yyyy',
+        language: 'pt-BR',
+        startDate: '-1000d'
+    });
 }
 
 function mostrarEventos() {
-    var evento = document.getElementById('carousel')
-    var prev = document.getElementById('prev')
-    var next = document.getElementById('next')
-    var numEvento = document.getElementById('numEventos')
-    criarEventos()
-    criarEventos()
-    criarEventos()
-    criarEventos()
+    var evento = $("#carousel")[0];
+    var prev = $("#prev")[0];
+    var next = $("#next")[0];
+    var numEvento = $("#numEventos")[0];
+    // criarEventos()
+    // criarEventos()
+    // criarEventos()
+    // criarEventos()
 
     numEvento.textContent = 'Numero de eventos encontrados: ' + eventos.length
     if (evento.length == 0) {
@@ -67,7 +109,7 @@ function mostrarEventos() {
         prev.style.display = ''
         next.style.display = ''
     }
-    adicionarEventos()
+    // adicionarEventos()
 }
 
 function criarEventos() {
@@ -85,6 +127,13 @@ function criarEventos() {
         indice: cont
     })
     cont++
+}
+
+function carregarEventos(eventosBD) {
+    eventos = eventosBD;
+    for(i=0; i<eventosBD.length; i++){
+        adicionarEventoBD(eventosBD[i]);
+    }
 }
 
 function criarEvento() {
@@ -116,41 +165,15 @@ function criarEvento() {
     // }
 }
 
-function adicionarEventos() {
+function adicionarEventos(eventoBD) {
     var contPass = 1,
-        contAtual = 1
-
-    // Criando o cartão
-    var divsCarousel =
-        "<button type='button' class='btn btn-outline-light' style='border: hidden; background: transparent'"+
-        "data-toggle='modal' data-target='#modalEventos' onclick='detalheModal(procurarElementoID(event.srcElement))'>" +
-        "<div id='cartao' class='cartao'>" +
-        "<img src='img/about-plan.jpg' class='imagemEventoCartao img-fluid mb-2'>" +
-        "<h5 class='nomeEventoCartao col-12 text-center'></h5>" +
-        "<div class='infEvento container row text-center'><div class='miniCalendario'><div class='mesCalendario'></div>" +
-        "<div class='textoCalendario'></div></div>" +
-        "<div class='col-9 textoCalendario'><img src='img/iconEvento/clock.svg' class='iconeEvento img-fluid'>" +
-        "<small></small><br><img src='img/iconEvento/map-location.svg' class='iconeEvento img-fluid'>" +
-        "<small></small></div></div></div></div></button>";
-
-    var eventoString =
-        "<button type='button' class='btn btn-secondary' style='border: hidden; background: transparent;'"+
-        "data-toggle='modal' data-target='#modalEventos' onclick='detalheModal(procurarElementoID(event.srcElement))'>" +
-        "<div id='cartaoPassado' class='cartaoPassado'>" +
-        "<img src='img/about-plan.jpg' class='imagemEventoCartao img-fluid'>" +
-        "<h5 class='nomeEventoCartao col-12 text-center'></h5>" +
-        "<div class='infEvento container row text-center'><div class='miniCalendario'><div class='mesCalendario'></div>" +
-        "<div class='textoCalendario'></div></div>" +
-        "<div class='col-9 textoCalendario'><img src='img/iconEvento/clock.svg' class='iconeEvento img-fluid'>" +
-        "<small></small><br><img src='img/iconEvento/map-location.svg' class='iconeEvento img-fluid'>" +
-        "<small></small></div></div></div></div></button><hr>"
-
+        contAtual = 1;
 
     for (i = 0; i < eventos.length; i++) {
-        var cartaoId
+        var cartaoId, evento;
 
         if (verificarData(eventos[i].dataInicio)) {
-            var evento = document.getElementById('carousel')
+            evento = document.getElementById('carousel')
             var carouselItem = document.createElement('div')
             carouselItem.id = 'parente' + contAtual;
             if (evento.children.length === 0) {
@@ -168,7 +191,7 @@ function adicionarEventos() {
             contAtual++
             document.getElementById(cartaoId.id).children[0].style.height = 300 + "px";
         } else {
-            var evento = document.getElementById('eventosPassados')
+            evento = document.getElementById('eventosPassados')
             var secao = document.createElement('div')
             secao.id = 'parente' + contPass;
 
@@ -181,28 +204,30 @@ function adicionarEventos() {
             contPass++
             document.getElementById(cartaoId.id).children[0].style.height = 150 + "px";
         }
-        var cartaoEncontrado = document.getElementById(cartaoId.id)
-        var horaEvento = cartaoEncontrado.children[2].children[1].children[1]
-        var localEvento = cartaoEncontrado.children[2].children[1].children[4]
-        var mesEvento = cartaoEncontrado.children[2].children[0].children[0]
-        var diaEvento = cartaoEncontrado.children[2].children[0].children[1]
-        var img = cartaoEncontrado.children[0]
-        var nome = cartaoEncontrado.children[1]
-
-        img.src = eventos[i].imagem
-        mesEvento.textContent = meses[desmebrarData(eventos[i].dataInicio, 1)].substring(0, 3)
-        diaEvento.textContent = desmebrarData(eventos[i].dataInicio, 0)
-        nome.textContent = eventos[i].nome
-        localEvento.textContent = eventos[i].local
-        horaEvento.textContent = eventos[i].hora
-
+        popularEvento(document.getElementById(cartaoId.id), eventos[i]);
     }
 }
 
+function popularEvento(cartaoEncontrado, eventoBD) {
+    var horaEvento = cartaoEncontrado.children[2].children[1].children[1];
+    var localEvento = cartaoEncontrado.children[2].children[1].children[4];
+    var mesEvento = cartaoEncontrado.children[2].children[0].children[0];
+    var diaEvento = cartaoEncontrado.children[2].children[0].children[1];
+    var img = cartaoEncontrado.children[0];
+    var nome = cartaoEncontrado.children[1];
+
+    img.src = eventoBD.imagem;
+    mesEvento.textContent = meses[desmebrarData(eventoBD.dataInicio, 1)].substring(0, 3);
+    diaEvento.textContent = desmebrarData(eventoBD.dataInicio, 0);
+    nome.textContent = eventoBD.nome;
+    localEvento.textContent = eventoBD.local;
+    horaEvento.textContent = eventoBD.hora;
+}
+
 function verificarData(dataEnviada) {
-    var dia = desmebrarData(dataEnviada, 0)
-    var mes = desmebrarData(dataEnviada, 1)
-    var ano = desmebrarData(dataEnviada, 2)
+    var dia = desmembrarData(dataEnviada, 0)
+    var mes = desmembrarData(dataEnviada, 1)
+    var ano = desmembrarData(dataEnviada, 2)
     if (ano >= data.getFullYear()) {
         if (ano == data.getFullYear()) {
             if (mes > data.getMonth()) {
@@ -250,13 +275,13 @@ function detalheModal(objeto) {
 }
 
 function dataPorExtenso(data) {
-    var dia = desmebrarData(dataEnviada, 0)
-    var mes = desmebrarData(dataEnviada, 1)
-    var ano = desmebrarData(dataEnviada, 2)
+    var dia = desmembrarData(dataEnviada, 0)
+    var mes = desmembrarData(dataEnviada, 1)
+    var ano = desmembrarData(dataEnviada, 2)
     return dia + ' de ' + meses[mes] + ' de ' + ano
 }
 
-function desmebrarData(data, parte) {
+function desmembrarData(data, parte) {
     var dia = data.substring(0, 2)
     var mes = data.substring(3, 5) - 1
     var ano = data.substring(6, 10)
@@ -277,47 +302,54 @@ function desmebrarData(data, parte) {
     return data;
 }
 
-function pesquisarEvento() {
-    var dataInicio = document.getElementById('dataInicio').value
-    var dataFim = document.getElementById('dataFim').value
-    var nome = document.getElementById('nomeEvento').value
-    var event = null
+function pesquisarEventoBD(form) {
+    var eventoPesq = $('#eventosPesq')[0];
+    var secao = document.createElement('div');
 
-    for (i = 0; i < eventos.length; i++) {
-        if (nome !== null && nome === eventos[i].nome) {
-            event = eventos[i]
-        } else {
-            if (eventos[i].dataFim <= dataFim && eventos[i].dataInicio >= dataInicio) {
-                event = eventos[i]
+    eventoPesq.appendChild(secao);
+    secao.innerHTML = divsCarousel;
+    // $.ajax({
+    //     method: "GET",
+    //     contentType: "json",
+    //     url:"rest/eventos/buscar/" + percorreForms(form),
+    //     data: {}
+    // }).done(function (data) {
+    //     for(i=0; i < data.length; i++){
+    //         eventoPesq.appendChild(secao);
+    //         secao.innerHTML = divsCarousel;
+    //         popularEvento(secao, data[i]);
+    //     }
+    // });
+}
+
+function desmembrarJson(json) {
+    var tupla, tupla2;
+    var vetorTupla = [];
+    var chave = true;
+    for(i=0; i<json.length; i++){
+        if(json[i] === '"'){
+            tupla = "";
+            tupla2 = "";
+            while(json[i] !== '\n') {
+                i++;
+                if(json[i] === ':'){
+                    chave = false;
+                }
+                if(json[i] !== '"' && json[i] !== ' ' && json[i] !== ':'
+                    && json[i] !== ',' && json[i] !== '\n') {
+                    if(chave) {
+                        tupla += json[i];
+                    }else{
+                        tupla2 += json[i];
+                    }
+                }
             }
+            vetorTupla.push({chave:tupla, valor:tupla2});
+            chave = true;
         }
     }
-    if (event === null) {
-        alert('Evento Não Encontrado')
-    } else {
-        var evento = document.getElementById('eventosPesq')
-        var carouselItem = document.createElement('div')
-        var cartao = document.createElement('div')
-        cartao.className = 'cartao'
-        var carouselContainer = document.createElement('div')
-        carouselContainer.className = 'carousel-container'
-        var carouselContent = document.createElement('div')
-        carouselContent.className = 'carousel-content'
-        var quebraLinha = document.createElement('br')
 
-        if (cont === 0) {
-            carouselItem.className = 'carousel-item active'
-        } else {
-            carouselItem.className = 'carousel-item'
-        }
-
-        // Criando o objeto dentro do carrousel
-        evento.appendChild(carouselItem)
-        carouselItem.appendChild(cartao)
-        carouselItem.appendChild(carouselContainer)
-        carouselItem.appendChild(carouselContent)
-        carouselContent.appendChild(quebraLinha)
-    }
+    return vetorTupla;
 }
 
 function procurarElementoID(evento) {
@@ -347,28 +379,23 @@ function adicionarEventoBD(evento){
     });
 }
 
-
 function percorreForms(form) {
-    var nomeVar, valorVar;
-    var json = '', tamanho = form.length;
+    var inputs = form.getElementsByTagName("Input");
 
-    for(i=0; i<tamanho; i++) {
-        if(form[i].nodeName !== 'BUTTON') {
-            if (i === 0) {
-                json += '{ '
-            }
-            nomeVar = form[i].name;
-            valorVar = form[i].value;
-            json += '"' + nomeVar.toString() + '": "' + valorVar.toString() + '"';
-            if (form[i+1].nodeName !== 'BUTTON') {
-                json += ",\n";
-            }
-        } else {
-            i = tamanho;
+    var nomeVar, valorVar;
+    var json = '{\n', tamanho = inputs.length;
+
+    for(i = 0 ; i < tamanho; i++) {
+        if(inputs[i].type !== "checkbox" && inputs[i].type !== "radio"
+            && inputs[i].type !== "button" && inputs[i].type !== "submit"){
+            nomeVar = inputs[i].name;
+            valorVar = inputs[i].value;
+            json += '"' + nomeVar.toString() + '": "' + valorVar.toString() + '",\n';
         }
     }
-    json+= '\n}';
-    console.log(json)
+    json = json.substring(0, json.length-2) + "\n}";
+    // console.log(json);
     // console.log(JSON.parse(json))
     // adicionarEventoBD(json);
+    return json;
 }

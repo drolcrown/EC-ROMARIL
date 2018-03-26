@@ -149,8 +149,8 @@ jQuery(document).ready(function($) {
       return false;
     });
   });
-  
-// ocultar div telefone 
+
+// ocultar div telefone
 function showDiv() {
   var ocultar = document.getElementById("telefone");
     if(ocultar.style.display === "block"){
@@ -159,10 +159,10 @@ function showDiv() {
         document.getElementById('validOculto').textContent = '';
       }
       validtel = false;
-     }else{
-      ocultar.style.display = "block";
-      validtel = true;
-     }
+   }else{
+    ocultar.style.display = "block";
+    validtel = true;
+   }
  }
 
 //mascara
