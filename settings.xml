@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <localRepository>C:\Desenvolvimento\maven-repositorio</localRepository>
+  
+  <mirrors>
+    <mirror>
+      <mirrorOf>*</mirrorOf>
+      <name>nexus</name>
+      <url>http://10.123.36.114:8381/nexus/content/groups/public/</url>
+      <id>nexus</id>
+    </mirror>
+	
+	<!--mirror>
+      <mirrorOf>*</mirrorOf>
+      <name>nexus_rio</name>
+      <url>http://10.122.150.170:8081/nexus/content/groups/public/</url>
+      <id>nexus_rio</id>
+    </mirror-->
+	
+	
+  </mirrors>
+  
+  
+  
+  <!--  
+  <profiles>
+    <profile>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <repositories>
+        <repository>
+          <releases>
+            <updatePolicy>never</updatePolicy>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+            <updatePolicy>never</updatePolicy>
+          </snapshots>
+          <id>ibm-maven-repo</id>
+          <name>ibm-maven-repo</name>
+          <url>http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/maven/repository/</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <releases>
+            <updatePolicy>never</updatePolicy>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+            <updatePolicy>never</updatePolicy>
+          </snapshots>
+          <id>ibm-maven-repo</id>
+          <name>ibm-maven-repo</name>
+          <url>http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/maven/repository/</url>
+        </pluginRepository>
+      </pluginRepositories>
+      <id>standard-extra-repos</id>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>standard-extra-repos</activeProfile>
+  </activeProfiles>
+  -->
+  
+</settings>
