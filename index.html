@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>SIBOT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <meta content="width=device-width, initial-scale=1.0" name="viewport"> -->
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+
+    <!-- Favicons -->
+    <link href="img/X_2D_positivo.png" rel="icon">
+    <link href="img/X_2D_positivo.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="top_menu">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="button_aba_chat">
+                        <div class="button" id="botao_voltar">
+                            <img src="img/voltar.svg" title="Voltar">
+                        </div>
+                        <div class="button" id="botao_minimizar">
+                            <img src="img/minimizar.svg" title="Minimizar">
+                        </div>
+                        <div class="button" id="botao_fechar">
+                            <img src="img/fechar.svg" title="Fechar">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="title">SIBOT</div>
+        </div>
+    </div>
+    <form class="post_add" method="post" action="/">
+        <div class="chat_window">
+            <section class="form-elegant scrollbar-light-blue">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="messages" id="mensagem"></ul>
+                        </div>
+                    </div>
+                </div>
+        </div>    
+        <div class="bottom_wrapper" id="rodape">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-xl-12">
+                        <div class="message_input_wrapper">
+                            <input class="message_input" id="mensagem_f" placeholder="Digite aqui" value=""/>
+                        </div>
+                        <button id="ear" class="send_message btn btn-warning" type="submit">Enviar</button>
+                        <div class="message_template">
+                            <li class="message">
+                                <div class="avatar"></div>
+                                <div class="text_wrapper">
+                                    <div class="text"></div>
+                                </div>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+<!-- JavaScript Livrarias -->
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Template Javascript Arquivo -->
+<!-- <script src="js/main.js"></script> -->
+<script src="js/funcao.js"></script>
+
+<!-- <script type="text/javascript">
+    $(function(){				
+        $('form').submit(function(e){
+            e.preventDefault();
+            var campo = document.getElementById('mensagem_f');
+            
+            var params = {texto:campo.value};
+            $.ajax({
+                url: 'http://localhost:3000/',						
+                method: 'post',                                                      
+                contentType: 'application/json',
+                data: params,
+                data: JSON.stringify(params)
+            }).done(function(data){
+                console.log('sucesso');
+                console.log(JSON.stringify(params));                        
+            
+            });
+        });				
+    });
+</script> -->
+</html>
